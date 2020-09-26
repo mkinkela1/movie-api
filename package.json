@@ -22,7 +22,17 @@
     "@babel/core": "^7.11.6",
     "@babel/plugin-transform-typescript": "^7.11.0",
     "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4"
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "eslint-loader": "^4.0.2",
+    "file-loader": "^6.1.0",
+    "source-map-loader": "^1.1.0",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^8.0.4",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
