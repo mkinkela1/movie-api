@@ -19,6 +19,13 @@ const Header: FunctionComponent = () => {
             handleOnChangeSearchValue(e)
           }
         />
+        <select className="s-header__content--dropdown">
+          <option value="1">Latest</option>
+          <option value="2">Now playing</option>
+          <option value="3">Popular</option>
+          <option value="4">Top rated</option>
+          <option value="5">Upcoming</option>
+        </select>
       </section>
     </header>
   );
