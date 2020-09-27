@@ -1,4 +1,5 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     resolve: {
@@ -40,5 +41,15 @@ module.exports = {
                 loader: 'source-map-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new Dotenv({
+            path: path.resolve(process.cwd(), '.env'),
+            safe: true,
+            allowEmptyValues: false,
+            systemvars: true,
+            silent: false,
+            defaults: false
+        })
+    ]
 };
