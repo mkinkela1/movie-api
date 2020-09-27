@@ -1,7 +1,13 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes';
 
 function App() {
-    return <div className="App">{process.env.MOVIE_API_KEY}</div>;
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 }
 
 export default App;
