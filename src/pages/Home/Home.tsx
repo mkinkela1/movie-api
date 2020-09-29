@@ -1,12 +1,18 @@
 import React from 'react';
-
-import Header from './components/Header';
+import MovieContainer from './components/MovieContainer';
 
 const Home = () => {
   return (
-    <>
-      <Header />
-    </>
+    <div className="l-container--lg">
+      <div className="l-grid">
+        <MovieContainer />
+        <MovieContainer />
+        <MovieContainer />
+        <MovieContainer />
+        <MovieContainer />
+        <MovieContainer />
+      </div>
+    </div>
   );
 };
 

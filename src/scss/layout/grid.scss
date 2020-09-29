@@ -1,10 +1,11 @@
 .l-grid{
   width: 100%;
+  max-width: 100vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 
   &__row{
-    margin-right: $grid-gap;
     &:last-of-type{
       margin-right: 0px;
     }

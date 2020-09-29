@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import Header from './components/Header';
 
 interface MainProps {
   children?: React.ReactNode;
@@ -7,7 +8,12 @@ interface MainProps {
 const Main: FunctionComponent<MainProps> = props => {
   const { children } = props;
 
-  return <main>{children}</main>;
+  return (
+    <section className="s-main">
+      <Header />
+      <main>{children}</main>
+    </section>
+  );
 };
 
 export default Main;
