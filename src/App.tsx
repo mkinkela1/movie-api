@@ -3,12 +3,18 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Routes from './Routes';
 import './App.scss';
+import MovieListTypeContextProvider from './contexts/MovieListTypeContext';
+import ListMoviesContextProvider from './contexts/ListMoviesContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <MovieListTypeContextProvider>
+      <ListMoviesContextProvider>
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
+      </ListMoviesContextProvider>
+    </MovieListTypeContextProvider>
   );
 }
 

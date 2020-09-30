@@ -1,10 +1,29 @@
-import React, { ChangeEvent, FunctionComponent, useState } from 'react';
+import React, {
+  ChangeEvent,
+  FunctionComponent,
+  useContext,
+  useState
+} from 'react';
+import {
+  NOW_PLAYING,
+  POPULAR,
+  TOP_RATED,
+  UPCOMING
+} from '../../../../constants/MovieListConstants';
+import { MovieListTypeContext } from '../../../../contexts/MovieListTypeContext';
 
 const Header: FunctionComponent = () => {
   const [searchValue, setSearchValue] = useState<string>('');
+  const { movieTypeOption, pickMovieType } = useContext(MovieListTypeContext);
 
   const handleOnChangeSearchValue = (e: ChangeEvent<HTMLInputElement>) =>
     setSearchValue(e.target.value);
+
+  const handleSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    if (pickMovieType) {
+      pickMovieType(e.target.value);
+    }
+  };
 
   return (
     <header className="s-header">
@@ -19,12 +38,14 @@ const Header: FunctionComponent = () => {
             handleOnChangeSearchValue(e)
           }
         />
-        <select className="s-header__content--dropdown">
-          <option value="1">Latest</option>
-          <option value="2">Now playing</option>
-          <option value="3">Popular</option>
-          <option value="4">Top rated</option>
-          <option value="5">Upcoming</option>
+        <select
+          className="s-header__content--dropdown"
+          value={movieTypeOption || NOW_PLAYING}
+          onChange={handleSelect}>
+          <option value={NOW_PLAYING}>Now playing</option>
+          <option value={POPULAR}>Popular</option>
+          <option value={TOP_RATED}>Top rated</option>
+          <option value={UPCOMING}>Upcoming</option>
         </select>
       </section>
     </header>
