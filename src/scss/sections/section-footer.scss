@@ -1,0 +1,46 @@
+.footer {
+  &__button--load {
+    all: unset;
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    background: $header-background;
+    color: $load-more-button-color;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    div {
+      border: 2px dashed #fff;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  &__button--roulette {
+    all: unset;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    background: $header-background;
+    color: $load-more-button-color;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}

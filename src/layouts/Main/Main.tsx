@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import Header from './components/Header';
+import { LoadMoreButton, Header } from './components';
 
 interface MainProps {
   children?: React.ReactNode;
@@ -12,6 +12,7 @@ const Main: FunctionComponent<MainProps> = props => {
     <section className="s-main">
       <Header />
       <main>{children}</main>
+      <LoadMoreButton />
     </section>
   );
 };

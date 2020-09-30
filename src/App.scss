@@ -16,7 +16,10 @@
 //Sections
 @import "scss/sections/section-main",
         "scss/sections/section-header",
-        "scss/components/movie-container";
+        "scss/sections/section-footer";
+
+//Components
+@import "scss/components/movie-container";
 
 //Layout
 @import "scss/layout/grid",
