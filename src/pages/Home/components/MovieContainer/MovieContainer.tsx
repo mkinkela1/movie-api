@@ -5,6 +5,9 @@ interface Movie {
   id: number;
   poster_path: string;
   vote_average: number;
+  title: string;
+  release_date: string;
+  original_language: string;
 }
 
 const MovieContainer: FunctionComponent<Movie> = props => {
@@ -22,6 +25,13 @@ const MovieContainer: FunctionComponent<Movie> = props => {
             className="c-movie-container__poster"
             alt="Movie poster"
           />
+          <div className="data">
+            {`${props.title} (${props.release_date?.substr(0, 4)})`}
+            <div className="data__language">
+              Language:&nbsp;
+              {props.original_language}
+            </div>
+          </div>
         </Link>
       </div>
     </>

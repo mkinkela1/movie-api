@@ -29,24 +29,28 @@ const Header: FunctionComponent = () => {
     <header className="s-header">
       <section className="s-header__content">
         <div className="s-header__content--title">Movie API</div>
-        <input
-          className="s-header__content--search"
-          type="text"
-          placeholder="Search movies"
-          value={searchValue}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            handleOnChangeSearchValue(e)
-          }
-        />
-        <select
-          className="s-header__content--dropdown"
-          value={movieTypeOption || NOW_PLAYING}
-          onChange={handleSelect}>
-          <option value={NOW_PLAYING}>Now playing</option>
-          <option value={POPULAR}>Popular</option>
-          <option value={TOP_RATED}>Top rated</option>
-          <option value={UPCOMING}>Upcoming</option>
-        </select>
+        <label aria-label="Search movies">
+          <input
+            className="s-header__content--search"
+            type="text"
+            placeholder="Search movies"
+            value={searchValue}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              handleOnChangeSearchValue(e)
+            }
+          />
+        </label>
+        <label aria-label="Dropdown">
+          <select
+            className="s-header__content--dropdown"
+            value={movieTypeOption || NOW_PLAYING}
+            onChange={handleSelect}>
+            <option value={NOW_PLAYING}>Now playing</option>
+            <option value={POPULAR}>Popular</option>
+            <option value={TOP_RATED}>Top rated</option>
+            <option value={UPCOMING}>Upcoming</option>
+          </select>
+        </label>
       </section>
     </header>
   );
