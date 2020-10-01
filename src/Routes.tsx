@@ -4,7 +4,7 @@ import { Switch, Redirect } from 'react-router-dom';
 import { Main as MainLayout, Movie as MovieLayout } from './layouts';
 
 import { Home as HomeView, Movie as MovieView } from './pages';
-import RouteWithLayout from './components/RouteWithLayout/RouteWithLayout';
+import { RouteWithLayout } from './components';
 
 const Routes: FunctionComponent = () => {
   return (

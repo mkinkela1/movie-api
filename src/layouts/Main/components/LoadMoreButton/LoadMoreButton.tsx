@@ -1,9 +1,11 @@
 import React, { FunctionComponent, useContext } from 'react';
 import ShuffleIcon from '../../../../assets/icons/shuffle_icon_white.png';
 import { ListMoviesContext } from '../../../../contexts/ListMoviesContext';
+import { RouletteModalContext } from '../../../../contexts/RouletteModalContext';
 
 const LoadMoreButton: FunctionComponent = () => {
   const { loadMoreMovies } = useContext(ListMoviesContext);
+  const { setIsOpen } = useContext(RouletteModalContext);
 
   return (
     <div className="l-container--lg">
@@ -15,7 +17,10 @@ const LoadMoreButton: FunctionComponent = () => {
             onClick={() => (loadMoreMovies ? loadMoreMovies() : undefined)}>
             <div>Load</div>
           </button>
-          <button className="footer__button--roulette" type="button">
+          <button
+            className="footer__button--roulette"
+            type="button"
+            onClick={() => (setIsOpen ? setIsOpen(true) : undefined)}>
             <img src={ShuffleIcon} alt="Shuffle icon" />
           </button>
         </div>

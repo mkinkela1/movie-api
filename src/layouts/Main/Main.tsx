@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { LoadMoreButton, Header } from './components';
+import { RouletteModal } from '../../components';
 
 interface MainProps {
   children?: React.ReactNode;
@@ -13,6 +14,7 @@ const Main: FunctionComponent<MainProps> = props => {
       <Header />
       <main>{children}</main>
       <LoadMoreButton />
+      <RouletteModal />
     </section>
   );
 };

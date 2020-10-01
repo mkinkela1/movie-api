@@ -18,6 +18,21 @@ const Movie: FunctionComponent<MovieProps> = props => {
     MovieAPI.index(props.match.params.id).then(r => setMovieDetails(r.data));
   }, []);
 
+  useEffect(() => {
+    MovieAPI.index(props.match.params.id).then(r => setMovieDetails(r.data));
+  }, [props.match.params.id]);
+
+  const getPosterImage = (posterImage: string | undefined | null) => {
+    if (posterImage)
+      return (
+        <img
+          src={`${process.env.IMAGE_URL_ORIGINAL}${posterImage}`}
+          alt="Movie poster"
+        />
+      );
+    return <></>;
+  };
+
   return (
     <div className="l-container--lg">
       <div className="l-grid">
@@ -30,10 +45,7 @@ const Movie: FunctionComponent<MovieProps> = props => {
               )})`}
             </h1>
             <figure className="c-show-movie__poster">
-              <img
-                src={`${process.env.IMAGE_URL_ORIGINAL}${movieDetails?.backdrop_path}`}
-                alt="Movie poster"
-              />
+              {getPosterImage(movieDetails?.backdrop_path)}
               <figcaption>{movieDetails.overview}</figcaption>
             </figure>
             <div className="c-show-movie__rating">

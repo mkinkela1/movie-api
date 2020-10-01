@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { ShuffleButton, Header } from './components';
+import { RouletteModal } from '../../components';
 
 interface MainProps {
   children?: React.ReactNode;
@@ -13,6 +14,7 @@ const Movie: FunctionComponent<MainProps> = props => {
       <Header />
       <main>{children}</main>
       <ShuffleButton />
+      <RouletteModal />
     </section>
   );
 };

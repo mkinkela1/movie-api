@@ -5,16 +5,19 @@ import Routes from './Routes';
 import './App.scss';
 import MovieListTypeContextProvider from './contexts/MovieListTypeContext';
 import ListMoviesContextProvider from './contexts/ListMoviesContext';
+import RouletteModalContextProvider from './contexts/RouletteModalContext';
 
 function App() {
   return (
-    <MovieListTypeContextProvider>
-      <ListMoviesContextProvider>
-        <BrowserRouter>
-          <Routes />
-        </BrowserRouter>
-      </ListMoviesContextProvider>
-    </MovieListTypeContextProvider>
+    <RouletteModalContextProvider>
+      <MovieListTypeContextProvider>
+        <ListMoviesContextProvider>
+          <BrowserRouter forceRefresh>
+            <Routes />
+          </BrowserRouter>
+        </ListMoviesContextProvider>
+      </MovieListTypeContextProvider>
+    </RouletteModalContextProvider>
   );
 }
 
