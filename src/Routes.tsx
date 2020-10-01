@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 
-import { Main as MainLayout } from './layouts';
+import { Main as MainLayout, Movie as MovieLayout } from './layouts';
 
-import { Home as HomeView } from './pages';
+import { Home as HomeView, Movie as MovieView } from './pages';
 import RouteWithLayout from './components/RouteWithLayout/RouteWithLayout';
 
 const Routes: FunctionComponent = () => {
@@ -15,6 +15,12 @@ const Routes: FunctionComponent = () => {
         exact
         layout={MainLayout}
         path="/home"
+      />
+      <RouteWithLayout
+        component={MovieView}
+        exact
+        layout={MovieLayout}
+        path="/movie/:id"
       />
       <Redirect to="/not-found" />
     </Switch>
