@@ -2,6 +2,7 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import Rater from 'react-rater';
 import 'react-rater/lib/react-rater.css';
 import MovieAPI from '../../api/MovieAPI';
+import RatingAPI from '../../api/RatingAPI';
 
 interface MovieProps {
   match: {
@@ -13,9 +14,18 @@ interface MovieProps {
 
 const Movie: FunctionComponent<MovieProps> = props => {
   const [movieDetails, setMovieDetails] = useState<any>({});
+  const [rating, setRating] = useState<number>(0);
 
   useEffect(() => {
     MovieAPI.index(props.match.params.id).then(r => setMovieDetails(r.data));
+    RatingAPI.ratedMovies().then(({ data }) => {
+      if (data.results && data.results.length > 0) {
+        // eslint-disable-next-line no-shadow
+        data.results.forEach((rating: any) => {
+          if (rating.id === +props.match.params.id) setRating(rating.rating);
+        });
+      }
+    });
   }, []);
 
   useEffect(() => {
@@ -49,7 +59,14 @@ const Movie: FunctionComponent<MovieProps> = props => {
               <figcaption>{movieDetails.overview}</figcaption>
             </figure>
             <div className="c-show-movie__rating">
-              <Rater total={10} />
+              <Rater
+                total={10}
+                rating={rating}
+                onRate={data => {
+                  RatingAPI.rateMovie(props.match.params.id, data.rating);
+                  setRating(data.rating);
+                }}
+              />
             </div>
             <div className="c-show-movie__row">
               <div className="c-show-movie__row--item">

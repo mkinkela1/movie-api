@@ -49,6 +49,7 @@
     "dot-notation": "off",
     "react/no-array-index-key": "off",
     "no-param-reassign": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }

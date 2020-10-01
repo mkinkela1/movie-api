@@ -1,4 +1,5 @@
 import axios from 'axios';
+import GuestSessionAPI from './GuestSessionAPI';
 
 export const api = axios.create({
   baseURL: process.env.MOVIE_API,
@@ -20,9 +21,12 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   response => response,
-  async error => Promise.reject(error)
+  error => {
+    const originalRequest = error.config;
+    return GuestSessionAPI.index().then(() => axios(originalRequest));
+  }
 );
 
-const { get } = api;
-export { get };
+const { get, post } = api;
+export { get, post };
 export default api;
