@@ -28,7 +28,7 @@ const MovieContainer: FunctionComponent<Movie> = props => {
           <div className="data">
             {`${props.title} (${props.release_date?.substr(0, 4)})`}
             <div className="data__language">
-              Language:
+              Language:&nbsp;
               {props.original_language}
             </div>
           </div>
