@@ -15,7 +15,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "import", "jsx-a11y"],
   "extends": [
     "plugin:react/recommended",
     "airbnb",
@@ -37,9 +37,20 @@
     ],
     "import/prefer-default-export": "off",
     "prettier/prettier": "error",
+    "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/jsx-curly-newline": "off",
+    "react/require-default-props":  "off",
+    "react/destructuring-assignment": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "dot-notation": "off",
+    "react/no-array-index-key": "off",
+    "no-param-reassign": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/no-unused-prop-types": "off",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }

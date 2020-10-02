@@ -1,0 +1,61 @@
+.c-show-movie {
+  background: #fff;
+  padding: 30px;
+
+  &__title {
+    font-size: 40px;
+    margin: 20px 0 40px 0;
+  }
+
+  figure {
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      position: absolute;
+      background-color: #fff;
+      bottom: 0;
+      font-size: 20px;
+      color: #000;
+      z-index: 1000;
+      padding: 20px;
+      width: 50%;
+      min-width: 400px;
+      max-width: 600px;
+    }
+  }
+
+  &__row {
+
+    &--item {
+      padding: 10px;
+      font-size: 20px;
+
+      &--caption {
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      &--data {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__rating {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .react-rater-star {
+      zoom: 3;
+    }
+  }
+}
