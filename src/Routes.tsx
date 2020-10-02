@@ -22,7 +22,7 @@ const Routes: FunctionComponent = () => {
         layout={MovieLayout}
         path="/movie/:id"
       />
-      <Redirect to="/not-found" />
+      <Redirect to="/home" />
     </Switch>
   );
 };

@@ -1,29 +1,40 @@
 .s-header {
   background: $header-background;
-  max-width: 100%;
   width: 100%;
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 0;
   padding: 0;
 
   &__content {
     display: flex;
     align-items: center;
-    width: $container-lg;
+    width: 100%;
+    max-width: 100%;
     justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
+
+    @media only screen and (max-width: $phone) {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
 
     &--title {
       align-self: center;
       font-size: 40px;
       color: $header-color;
       flex: 1;
-      min-width: 250px;
+      max-width: 250px;
       overflow: hidden;
       text-decoration: none;
+      @media only screen and (max-width: $phone) {
+        flex-basis: 100%;
+      }
     }
 
     &--search {
@@ -35,11 +46,13 @@
       padding: 0 10px;
       font-size: 15px;
       outline: none;
-      flex: 2;
+
+      @media only screen and (max-width: $phone) {
+        flex-basis: 100%;
+      }
     }
 
     &--dropdown {
-
       background: $header-background;
       color: $header-color;
       border: 1px solid #fff;
@@ -50,7 +63,9 @@
       font-size: 15px;
       outline: none;
       margin: 10px;
-
+      @media only screen and (max-width: $phone) {
+        flex-basis: 100%;
+      }
     }
   }
 }
