@@ -8,11 +8,15 @@ const Home = () => {
   return (
     <div className="l-container--lg">
       <div className="l-grid">
-        {listMovies &&
-          listMovies.length > 0 &&
-          listMovies.map((latestMovie: any, idx: number) => (
-            <MovieContainer {...latestMovie} key={idx} />
-          ))}
+        <div className="l-grid__row l-grid__row-12">
+          <section className="s-movies">
+            {listMovies &&
+              listMovies.length > 0 &&
+              listMovies.map((latestMovie: any, idx: number) => (
+                <MovieContainer {...latestMovie} key={idx} />
+              ))}
+          </section>
+        </div>
       </div>
     </div>
   );

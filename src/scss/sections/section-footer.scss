@@ -1,5 +1,8 @@
 .footer {
+  display: block;
+
   &__button--load {
+    position: relative;
     all: unset;
     width: 100px;
     height: 100px;
