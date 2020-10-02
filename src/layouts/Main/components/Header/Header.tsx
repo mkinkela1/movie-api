@@ -1,9 +1,4 @@
-import React, {
-  ChangeEvent,
-  FunctionComponent,
-  useContext,
-  useState
-} from 'react';
+import React, { ChangeEvent, FunctionComponent, useContext } from 'react';
 import {
   NOW_PLAYING,
   POPULAR,
@@ -11,13 +6,14 @@ import {
   UPCOMING
 } from '../../../../constants/MovieListConstants';
 import { MovieListTypeContext } from '../../../../contexts/MovieListTypeContext';
+import { ListMoviesContext } from '../../../../contexts/ListMoviesContext';
 
 const Header: FunctionComponent = () => {
-  const [searchValue, setSearchValue] = useState<string>('');
   const { movieTypeOption, pickMovieType } = useContext(MovieListTypeContext);
+  const { query, setQuery } = useContext(ListMoviesContext);
 
   const handleOnChangeSearchValue = (e: ChangeEvent<HTMLInputElement>) =>
-    setSearchValue(e.target.value);
+    setQuery(e.target.value);
 
   const handleSelect = (e: ChangeEvent<HTMLSelectElement>) => {
     if (pickMovieType) {
@@ -34,7 +30,7 @@ const Header: FunctionComponent = () => {
             className="s-header__content--search"
             type="text"
             placeholder="Search movies"
-            value={searchValue}
+            value={query}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               handleOnChangeSearchValue(e)
             }

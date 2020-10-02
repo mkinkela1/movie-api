@@ -50,6 +50,7 @@
     "react/no-array-index-key": "off",
     "no-param-reassign": "off",
     "jsx-a11y/label-has-associated-control": "off",
+    "react/no-unused-prop-types": "off",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
