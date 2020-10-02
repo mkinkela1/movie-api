@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --env.development --open --hot --progress",
-    "build": "env-cmd -e dev webpack --mode production --env.prod --progress",
+    "build": "webpack --mode production --env.development --progress",
     "lint": "eslint './src/**/*.{ts,tsx}'",
     "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix"
   },
